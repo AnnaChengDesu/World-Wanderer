@@ -6,10 +6,11 @@ $font-weight-map: (
   "regular": 300,
 );
 
-@mixin heading() {
+@mixin heading($level) {
   font-weight: map-get($font-weight-map, "bold");
 }
 
 @mixin paragraph($weight: "regular") {
+  font-size: 16px;
   font-weight: map-get($font-weight-map, $weight);
 }

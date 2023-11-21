@@ -2,7 +2,7 @@ import BaseLayout from "pages/components/BaseLayout/BaseLayout";
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const Home = lazy(() => import("./pages/Home"));
+const Home = lazy(() => import("./pages/Home/Home"));
 const Country = lazy(() => import("./pages/Country"));
 
 function App() {
