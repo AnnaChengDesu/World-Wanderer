@@ -1,1 +1,70 @@
-@import-normalize;
+@use "styles/root-variables.scss";
+@use "styles/theme.scss";
+@use "styles/fonts.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: var(--font-family);
+  color: var(--text);
+  background-color: var(--background);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include fonts.paragraph;
+
+  ::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  @include fonts.heading;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+b {
+  @include fonts.paragraph("medium");
+}
+
+p,
+ul,
+ol {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+li b {
+  padding-right: 0.25rem;
+
+  &::after {
+    content: ":";
+  }
+}
