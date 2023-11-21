@@ -1,6 +1,6 @@
 @use "styles/root-variables.scss";
-@use "styles/theme.scss";
-@use "styles/fonts.scss";
+@use "styles/_theme.scss";
+@use "styles/_fonts.scss";
 
 * {
   box-sizing: border-box;

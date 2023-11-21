@@ -1,0 +1,15 @@
+@use "sass:map";
+
+$font-weight-map: (
+  "bold": 800,
+  "medium": 600,
+  "regular": 300,
+);
+
+@mixin heading() {
+  font-weight: map-get($font-weight-map, "bold");
+}
+
+@mixin paragraph($weight: "regular") {
+  font-weight: map-get($font-weight-map, $weight);
+}
