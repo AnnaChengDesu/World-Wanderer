@@ -3,7 +3,7 @@ import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 const Home = lazy(() => import("./pages/Home/Home"));
-const Country = lazy(() => import("./pages/Country"));
+const CountryDetail = lazy(() => import("./pages/CountryDetail/CountryDetail"));
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/country/:code" element={<Country />} />
+          <Route path="/country/:code" element={<CountryDetail />} />
         </Routes>
       </Suspense>
     </BaseLayout>
