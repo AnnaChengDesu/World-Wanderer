@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./BaseLayout.module.scss";
+import { DarkMode } from "@mui/icons-material";
 
 export default function BaseLayout({ children }) {
   return (
@@ -9,7 +10,7 @@ export default function BaseLayout({ children }) {
           <Link to="/">
             <h1 className={styles.title}>Where is the world?</h1>
           </Link>
-          <div>Dark Mode</div>
+          <DarkMode />
         </div>
       </header>
       <main className={styles.main}>
