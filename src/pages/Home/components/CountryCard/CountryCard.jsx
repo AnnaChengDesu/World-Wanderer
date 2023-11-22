@@ -19,12 +19,9 @@ function CountryCard({ alpha3Code, capital, flag, name, population, region }) {
   ];
   return (
     <Link to={`/country/${alpha3Code}`} className={styles.root}>
-      <img
-        src={flag}
-        alt={`country flag of ${name}`}
-        loading="lazy"
-        width={265}
-      />
+      <div className={styles.flag}>
+        <img src={flag} alt={`country flag of ${name}`} loading="lazy" />
+      </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <ul className={styles.details}>
