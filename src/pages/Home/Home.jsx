@@ -14,13 +14,16 @@ import REGION_LIST from "constants/regionList";
 import CountryCard from "./components/CountryCard/CountryCard";
 import Skeleton from "./components/Skeleton";
 import { useGetAllCountriesQuery } from "reduxModules/country/countryApi";
+import useInfiniteLoader from "hooks/useInfiniteLoader";
 
 function Home() {
-  const { data, isLoading } = useGetAllCountriesQuery();
+  const { data = [], isLoading } = useGetAllCountriesQuery();
   const [{ name, region }, setFilter] = useState({
     name: "",
     region: "",
   });
+
+  const { items, hasMoreItems, loadMoreRef } = useInfiniteLoader(data);
 
   const handleChangeFilter = (key) => (event) => {
     const value = event.target.value;
@@ -67,10 +70,13 @@ function Home() {
         <Skeleton.HomeCountryCards />
       ) : (
         <div className={styles.cards}>
-          {data.map((country) => (
+          {items.map((country) => (
             <CountryCard key={country.alpha3Code} {...country}></CountryCard>
           ))}
         </div>
+      )}
+      {hasMoreItems && (
+        <div ref={loadMoreRef} className={styles.loadMore}></div>
       )}
     </>
   );
