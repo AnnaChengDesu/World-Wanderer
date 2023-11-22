@@ -1,4 +1,6 @@
 import styles from "./CountryCard.module.scss";
+import { Link } from "react-router-dom";
+import { string } from "prop-types";
 
 function CountryCard({ alpha3Code, capital, flag, name, population, region }) {
   const details = [
@@ -26,12 +28,12 @@ function CountryCard({ alpha3Code, capital, flag, name, population, region }) {
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <ul className={styles.details}>
-          {details.map(({ label, value }) => {
+          {details.map(({ label, value }) => (
             <li key={label}>
               <b>{label}</b>
               {value}
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       </div>
     </Link>
@@ -43,7 +45,7 @@ CountryCard.propTypes = {
   capital: string.isRequired,
   flag: string.isRequired,
   name: string.isRequired,
-  population: number.isRequired,
+  population: string.isRequired,
   region: string.isRequired,
 };
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./index.module.scss";
+import styles from "./BaseLayout.module.scss";
 
 export default function BaseLayout({ children }) {
   return (
