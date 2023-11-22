@@ -12,8 +12,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Home.module.scss";
 import REGION_LIST from "constants/regionList";
 import CountryCard from "./components/CountryCard/CountryCard";
+import Skeleton from "./components/Skeleton";
+import { useGetAllCountriesQuery } from "reduxModules/country/countryApi";
 
 function Home() {
+  const { data, isLoading } = useGetAllCountriesQuery();
   const [{ name, region }, setFilter] = useState({
     name: "",
     region: "",
@@ -60,19 +63,15 @@ function Home() {
           </Select>
         </FormControl>
       </div>
-      <div className={styles.cards}>
-        {/* TODO: replace with real data from API */}
-        {Array.from({ length: 10 }, () => ({
-          alpha3Code: "col",
-          capital: "Bogotá",
-          flag: "https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg",
-          name: "Colombia",
-          population: 48759958,
-          region: "South America",
-        })).map((country, countryIndex) => (
-          <CountryCard key={countryIndex} {...country}></CountryCard>
-        ))}
-      </div>
+      {isLoading ? (
+        <Skeleton.HomeCountryCards />
+      ) : (
+        <div className={styles.cards}>
+          {data.map((country) => (
+            <CountryCard key={country.alpha3Code} {...country}></CountryCard>
+          ))}
+        </div>
+      )}
     </>
   );
 }

@@ -6,7 +6,7 @@ function CountryCard({ alpha3Code, capital, flag, name, population, region }) {
   const details = [
     {
       label: "Population",
-      value: population.toLocaleString(),
+      value: population,
     },
     {
       label: "Region",
