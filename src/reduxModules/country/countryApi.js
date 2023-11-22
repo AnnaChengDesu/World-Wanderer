@@ -26,7 +26,7 @@ export const countryApi = createApi({
         });
 
         if (countryResult.error) throw countryResult.error;
-        const countryBorders = countryResult.data.border;
+        const countryBorders = countryResult.data.borders;
 
         const countryBorderResults = await Promise.all(
           countryBorders.map(
