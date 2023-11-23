@@ -1,3 +1,4 @@
+import { CircularProgress } from "@mui/material";
 import BaseLayout from "pages/components/BaseLayout/BaseLayout";
 import { Suspense, lazy, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <BaseLayout>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<CircularProgress />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/country/:code" element={<CountryDetail />} />
