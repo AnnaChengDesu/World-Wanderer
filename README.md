@@ -2,10 +2,6 @@
 
 Online demo: https://whereintheworld-fe-challenge.vercel.app/
 
-## About the challenge
-
-Read more details in [challenge description](./challenge-doc/README.md).
-
 ## Project setup
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
