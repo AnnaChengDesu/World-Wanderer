@@ -8,10 +8,12 @@ import Skeleton from "../components/Skeleton";
 function CountryDetail() {
   const params = useParams();
 
-  const { data, isLoading } = useGetCountryByAlpha3CodeQuery(params.code);
+  const { data, isLoading, isFetching } = useGetCountryByAlpha3CodeQuery(
+    params.code
+  );
 
   const renderDetail = () => {
-    if (isLoading) return <Skeleton.CountryDetail />;
+    if (isLoading || isFetching) return <Skeleton.CountryDetail />;
 
     if (!data)
       return <p>Couldn't find a country by alpha-3 code: "{params.code}".</p>;
