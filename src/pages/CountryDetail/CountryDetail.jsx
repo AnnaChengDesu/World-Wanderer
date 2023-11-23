@@ -118,7 +118,12 @@ function CountryDetail() {
   return (
     <div className={styles.root}>
       <div className={styles.navigateBack}>
-        <Button to="/" component={Link} startIcon={<ArrowBackIosNew />}>
+        <Button
+          color="neutral"
+          to="/"
+          component={Link}
+          startIcon={<ArrowBackIosNew />}
+        >
           Back
         </Button>
         {renderDetail()}
