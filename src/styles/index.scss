@@ -34,7 +34,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  @include fonts.heading("bold");
+  @include fonts.heading();
 }
 
 a {
