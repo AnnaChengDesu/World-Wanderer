@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import {
   FormControl,
+  IconButton,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -50,6 +51,14 @@ function Home() {
     }));
   };
 
+  const clearSearch = () =>
+    setFilter((state) => ({
+      ...state,
+      name: "",
+    }));
+
+  const onMouseDownClearSearch = (event) => event.preventDefault();
+
   const renderCountryCards = () => {
     if (isLoading) return <Skeleton.HomeCountryCards />;
 
@@ -81,6 +90,14 @@ function Home() {
             startAdornment={
               <InputAdornment position="start">
                 <SearchIcon />
+              </InputAdornment>
+            }
+            endAdornment={
+              <InputAdornment className={styles.searchClear} position="end">
+                <IconButton
+                  onClick={clearSearch}
+                  onMouseDown={onMouseDownClearSearch}
+                ></IconButton>
               </InputAdornment>
             }
             placeholder="Search for a country..."
