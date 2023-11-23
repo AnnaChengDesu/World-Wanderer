@@ -6,10 +6,10 @@ function CountryDetail() {
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <Skeleton
+          className={styles.flag}
           variant="rectangular"
-          height={400}
           width="100%"
-          style={{ minWidth: 550 }}
+          height="100%"
         />
       </div>
       <div className={styles.content}>

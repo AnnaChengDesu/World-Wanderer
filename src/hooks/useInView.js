@@ -12,7 +12,7 @@ export default function useInView(callback) {
           callback();
         }
       },
-      { root: null, rootMargin: "0px", threshold: 0.5 }
+      { root: null, rootMargin: "25px", threshold: 0 }
     );
 
     observer.observe(observeRef.current);
