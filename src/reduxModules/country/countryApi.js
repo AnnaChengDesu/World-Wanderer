@@ -25,7 +25,8 @@ export const countryApi = createApi({
           },
         });
 
-        if (countryResult.error) throw countryResult.error;
+        if (countryResult.data.status === 400)
+          return { error: countryResult.data };
         const countryBorders = countryResult.data.borders;
 
         const countryBorderResults = await Promise.all(
@@ -47,7 +48,7 @@ export const countryApi = createApi({
                 borders: countryBorderResults,
               }),
             }
-          : { error: countryBorderResults.error };
+          : { error: countryBorderResults.data };
       },
     }),
   }),
