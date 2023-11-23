@@ -4,6 +4,7 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 import { useEffect, useState, useMemo } from "react";
 import { IconButton, ThemeProvider, createTheme } from "@mui/material";
 import getDesignTokens from "muiTheme";
+import BaseBackToTop from "../BackToTop/BackToTop";
 
 export default function BaseLayout({ children }) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -58,6 +59,7 @@ export default function BaseLayout({ children }) {
       <main className={styles.main}>
         <div className={styles.container}>{children}</div>
       </main>
+      <BaseBackToTop />
     </ThemeProvider>
   );
 }
