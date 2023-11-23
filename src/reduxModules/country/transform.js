@@ -2,6 +2,7 @@ export const transformCountry = (country) => {
   const {
     alpha3Code = "",
     borders = [],
+    capital,
     currencies = [],
     languages = [],
     population,
@@ -10,13 +11,17 @@ export const transformCountry = (country) => {
 
   return {
     ...country,
-    alpha3Code: alpha3Code.toLowerCase(),
+    alpha3Code: alpha3Code?.toLowerCase(),
     borders: borders.map((border) => ({
       ...border,
       alpha3Code: border.alpha3Code.toLowerCase(),
     })),
+    capital: capital || "-",
     currencies: currencies.map((currency) => currency.name).join(", "),
-    languages: languages.map((language) => language.name).join(", "),
+    languages:
+      languages.length === 0
+        ? "-"
+        : languages.map((language) => language.name).join(", "),
     population: population.toLocaleString(),
     topLevelDomain: topLevelDomain[0],
   };
