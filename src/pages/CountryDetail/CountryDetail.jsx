@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { ArrowBackIosNew } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useGetCountryByAlpha3CodeQuery } from "reduxModules/country/countryApi";
-import Skeleton from "../Home/components/Skeleton";
+import Skeleton from "../components/Skeleton";
 
 function CountryDetail() {
   const navigate = useNavigate();
@@ -99,7 +99,9 @@ function CountryDetail() {
 
           <div className={styles.borders}>
             <b>Border Countries:</b>
-            {borders.length > 0 ? (
+            {borders.length === 0 ? (
+              "None"
+            ) : (
               <ul className={styles.borderList}>
                 {borders.map((border) => (
                   <Link to={`/country/${border.alpha3Code}`} key={border}>
@@ -107,8 +109,6 @@ function CountryDetail() {
                   </Link>
                 ))}
               </ul>
-            ) : (
-              "None"
             )}
           </div>
         </div>

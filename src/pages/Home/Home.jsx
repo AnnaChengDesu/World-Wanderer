@@ -12,7 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Home.module.scss";
 import REGION_LIST from "constants/regionList";
 import CountryCard from "./components/CountryCard/CountryCard";
-import Skeleton from "./components/Skeleton";
+import Skeleton from "../components/Skeleton";
 import { useGetAllCountriesQuery } from "reduxModules/country/countryApi";
 import useInfiniteLoader from "hooks/useInfiniteLoader";
 
