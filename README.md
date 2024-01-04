@@ -1,6 +1,6 @@
 # Where in the world? - Front End Challenge
 
-Online demo: https://whereintheworld-fe-challenge.vercel.app/
+Online demo: https://annachengdesu.github.io/where-in-the-world/
 
 ## Project setup
 
