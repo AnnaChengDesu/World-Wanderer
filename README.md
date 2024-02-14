@@ -1,6 +1,6 @@
-# Where in the world? - Front End Challenge
+# World Wanderer
 
-Online demo: https://annachengdesu.github.io/where-in-the-world/
+Online demo: https://w0rld-wanderer.vercel.app/
 
 ## Project setup
 
